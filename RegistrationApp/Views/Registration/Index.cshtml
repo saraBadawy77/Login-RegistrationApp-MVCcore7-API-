@@ -1,0 +1,86 @@
+﻿@model RegistrationApp.Models.Registration
+ 
+
+
+@{
+    var SuccessMessage = TempData["SuccessMessage"]?.ToString();
+    var ErrorMessage = TempData["ErrorMessage"]?.ToString();
+
+}
+
+
+
+<html>
+
+<head>
+
+   
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap">
+  
+    <link rel="stylesheet" href="/css/style.css">
+   
+</head>
+
+    
+<body>
+  
+
+    <div class="row">
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-danger w-50 mx-auto my-auto text-center mt-5">@TempData["SuccessMessage"]</div>
+        }
+
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger w-50 mx-auto my-auto text-center mt-5">@TempData["ErrorMessage"]</div>
+        }
+        <div class="col-md-4">
+            <form asp-action="Save" class="registration-form">
+                
+                <div class="form-group">
+                    <input asp-for="username" class="form-control" placeholder="Username" />
+                    <span asp-validation-for="username" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="Email" class="form-control" placeholder="Email" type="email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+               
+                <div class="form-group">
+
+                    <input asp-for="password" class="form-control" placeholder="password" type="password" />
+                    <span asp-validation-for="password" class="text-danger  d-block "></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Register" class="btn btn-primary" />
+                </div>
+
+                <div class="button-container">
+                    <a asp-action="loginviwe" class="btn btn-orange">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+   
+</body>
+
+
+</html>
+
+
+
+
+
+

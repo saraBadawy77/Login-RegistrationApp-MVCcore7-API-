@@ -1,0 +1,58 @@
+﻿@model RegistrationApp.Models.Login
+
+
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="login" class="registration-form">
+
+                <div class="form-group">
+                    <input asp-for="Username" class="form-control" placeholder="Username" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+
+                    <input asp-for="Password" class="form-control" placeholder="password" type="password" />
+                    <span asp-validation-for="Password" class="text-danger  d-block "></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Login" class="btn btn-primary" />
+                </div>
+
+                <div class="button-container">
+                    <a asp-action="Index" class="btn btn-orange">TO Registration</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+
+</body>
+
+
+</html>
+

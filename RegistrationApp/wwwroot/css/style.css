@@ -1,0 +1,71 @@
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+.registration-form {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding:50px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    height:400px;
+}
+
+.form-group {
+    margin: 10px 0;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc; 
+    border-radius: 0;
+    outline: none; 
+}
+
+.text-danger {
+    color: red;
+    width: 100%;
+    padding: 10px;
+    display: block;
+}
+
+
+.btn-primary,
+.btn-orange {
+    width: 50%;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-bottom:10px;
+    margin-top:40px;
+    text-decoration:none;
+}
+
+.btn-primary {
+    background-color: orange;
+}
+
+.btn-orange {
+    background-color: orange;
+}
+
+    .btn-primary:hover,
+    .btn-orange:hover {
+        background-color: darkorange;
+    }
